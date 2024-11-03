@@ -7,8 +7,31 @@ int main(){
       cout<<"Input:";
       cin>>x>>y;
       cout<<"The value of x :"<<x<<" and y:"<<y;
-    
 
+   //DATA TYPES:
+    //int
+    int x=10;
+    //long
+    long y=15;
+    //long long
+    long long z=190000000;
+
+    //STRING AND GETLINE
+    string s1,s2; 
+     cout<<"Input string:";     //Hey striver //s1=Hey //" " breaks the string
+    cin>>s1>>s2;
+    cout<<"string:"<<s1<<" "<<s2;
+
+   //In order to get "Hey striver I am cool" (means complete sentence) all in one string // use getline.
+
+   string str;
+   getline(cin, str);
+   cout<<"string:"<<str;
+
+   //char (can store all 256 characters of english dictionary)
+   char ch='i';   (using single quotes)
+   cout<<"character:"<<ch; 
+   
 return 0;
 }
 
