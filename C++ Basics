@@ -31,7 +31,27 @@ int main(){
    //char (can store all 256 characters of english dictionary)
    char ch='i';   (using single quotes)
    cout<<"character:"<<ch; 
-   
+
+  //STORING CAPACITY:
+  //integer approx -10^9 TO 10^9.
+  // long : -10^12 to 10^12.
+  //long long : -10^18 to 10^18.
+
+  //IF ELSE STATEMENTS:
+//Write a program which takes input of age and prints if you are an adult or not.
+//>=18, yes
+//<18,no 
+  int age;
+   cout<<"age:";
+   cin>>age;
+    if(age>=18) {
+    cout<<"you are an adult.";
+   } 
+    else{
+      cout<<"you are not an adult.";
+    }
+
+
 return 0;
 }
 
