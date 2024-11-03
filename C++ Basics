@@ -1,7 +1,14 @@
-//user input/output
+//USER INPUT/OUTPUT
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
+    //TAKING INPUT
+    int x,y;
+      cout<<"Input:";
+      cin>>x>>y;
+      cout<<"The value of x :"<<x<<" and y:"<<y;
+    
 
 return 0;
 }
+
