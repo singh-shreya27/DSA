@@ -109,8 +109,95 @@ print ->"retirement time.
     cout<<"retirement time.";
   }
 
+//SWITCH STATEMENT.
+//Take the day no. and print the corresponding day.
+  //for 1 print Monday,
+  //for 2 print Tuesday and so on for 7 print Sunday.
+int day;
+cout<<"day:";
+cin>>day;
+switch(day){
+  case 1:
+  {
+    cout<<"Monday";
+    break;
+  }
+  case 2:{
+    cout<<"Tuesday";
+    break;
+  }
+  case 3:{
+    cout<<"Wednesday";
+    break;
+  }
+  case 4:{
+    cout<<"Thursday";
+    break;
+  }
+  case 5:{
+    cout<<"Friday";
+    break;
+  }
+  case 6:{
+    cout<<"Saturday";
+    break;
+  }
+  case 7:{
+    cout<<"Sunday";
+    break;
+  }
+  default:
+  {
+    cout<<"Invalid";
+  }
+}
+cout<<endl<<"Check";
 
+//2D ARRAY.
+int arr[3][5];
+arr[3][5]=78;
+cout<<arr[3][5];
+
+//DO WHILE
+int i=2;
+do{
+  cout<<"Striver"<<i<<endl;
+  i++;
+}while(i<=1);
+cout<<i<<endl;
 
 return 0;
 }
 
+#include<bits/stdc++.h>
+using namespace std;
+//FUNCTIONS
+//Functions are set of code which performs something for you.
+//Functions are used to modularise code.
+//Functions are used to increase readaility.
+//Functions are used to use same code multiple times.
+//void ->which does not return anything
+//return
+//parametrised
+//non parametrised
+//1.void printName(){
+  cout<<"Hey striver";
+}
+//2.void printName(string name){
+  cout<<"Hey "<<name;
+}
+int main(){
+//1.printName();
+//2. string name;
+  cout<<"name:";
+  cin>>name;
+  printName(name);
+//inbuilt max and min functions exist.
+
+//PASS BY VALUE
+//copy goes
+//PASS BY REFERENCE
+(&)
+//Arrays always goes by reference.
+return 0;
+}
