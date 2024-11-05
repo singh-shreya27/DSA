@@ -5,6 +5,7 @@ Three steps:
 1.Always compute time complexity in terms of worst case scenario.(Best, Average, Worst)
 2.Avoid constants.
 3.Avoid lower values.
+
 SPACE COMPLEXITY:
 It is the memory space that a program takes.
 Auxiliary space(space that you take to solve the problem)+Input space(Space that you take to store the input).
