@@ -11,3 +11,5 @@ It is the memory space that a program takes.
 Auxiliary space(space that you take to solve the problem)+Input space(Space that you take to store the input).
 
 Generally , most of the servers(leetcode,GFG, etc) takes 1 second for 10^8 operations. 2 seconds for 2*10^8 opeartions.
+
+Patterns:
