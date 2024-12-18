@@ -120,3 +120,6 @@ int main(){
 //and an array can easily store 256 characters.
 //so always prefer arrays for character hashing and always use char-'a' for lowercase  and char-'A' for uppercase.
 //if all elements present  make an array of 256 size.
+
+//so to solve the problem in number hashing, STL/collection(java) comes in.
+//STL: 1.Map , 2. Unordered map.
