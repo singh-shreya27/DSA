@@ -4,7 +4,8 @@
 using namespace std;
 
 void selectionSort(int arr[],int n){
-   
+     //last index is n-1
+    //so we sort till (n-2)th index..last index is already sorted.
     for(int i=0;i<=n-2;i++){
     int min=i;
      for(int j=i;j<=n-1;j++){
@@ -19,8 +20,7 @@ void selectionSort(int arr[],int n){
    }
 }
 int main(){
-           //last index is n-1
-    //so we sort till (n-2)th index..last index is already sorted.
+       
     int n;
     cout<<"n:";
     cin>>n;
