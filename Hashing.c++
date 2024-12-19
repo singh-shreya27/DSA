@@ -123,3 +123,6 @@ int main(){
 
 //so to solve the problem in number hashing, STL/collection(java) comes in.
 //STL: 1.Map , 2. Unordered map.
+
+                            //MAP:
+
