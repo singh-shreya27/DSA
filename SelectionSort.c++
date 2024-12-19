@@ -38,3 +38,7 @@ int main(){
       }
 
 }
+
+//T.C:
+//O(n(n+1)/2)~O(n^2)   in best,worst and average case
+//O(n^2)
