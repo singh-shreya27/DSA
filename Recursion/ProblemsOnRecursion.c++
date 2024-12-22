@@ -62,4 +62,44 @@ int main(){
   return 0;
 }
 
+ //[important]
+//Q.4.Print linearly from 1 to N (but by backtracking)
+   //f(i+1,n) +is not allowed , do with -
+  #include<bits/stdc++.h>
+  using namespace std;
+  void func(int i,int n){
+     if(i<1){
+      return;
+     }
+     func(i-1,n);
+     cout<<i<<" ";    //print line after recursion call
+       }
+  int main(){
+    int n;
+    cout<<"n:";
+    cin>>n;
+   func(n,n);
+    return 0;
+  }
+
+//Q.5 Print from n to 1(by Backtracking)
+//- is not allowed.
+#include<bits/stdc++.h>
+using namespace std;
+
+void func(int i,int n){
+  if(i>n){
+    return;
+  }
+  func(i+1,n);
+  cout<<i<<" ";
+}
+int main(){
+  int n;
+  cout<<"n:";
+  cin>>n;
+  func(1,n);
+  return 0;
+}
+
 
