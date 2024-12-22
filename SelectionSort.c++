@@ -12,11 +12,11 @@ void selectionSort(int arr[],int n){
         if(arr[j]<arr[min]){
             min=j;
         }
-        // swap(arr[min],arr[i]);
+     }
+      // swap(arr[min],arr[i]);
         int temp=arr[min];
         arr[min]=arr[i];
         arr[i]=temp;
-     }
    }
 }
 int main(){
