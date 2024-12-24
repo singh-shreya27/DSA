@@ -12,9 +12,15 @@ Auxiliary space(space that you take to solve the problem)+Input space(Space that
 
 Generally , most of the servers(leetcode,GFG, etc) takes 1 second for 10^8 operations. 2 seconds for 2*10^8 opeartions.
 
+<h2>Recursion</h2>
+
 <h2>Sorting-1:</h2>
 <ol>
   <li>Selection sort</li>
   <li>Bubble sort</li>
   <li>Insertion sort</li>
+</ol>
+<h2>Sorting-2:</h2>
+<ol>
+  <li>Merge Sort</li>
 </ol>
