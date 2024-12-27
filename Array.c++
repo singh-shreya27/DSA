@@ -1,4 +1,5 @@
 //Given number is present in the array or not using hash array.
+
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
