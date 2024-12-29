@@ -24,5 +24,5 @@ Generally , most of the servers(leetcode,GFG, etc) takes 1 second for 10^8 opera
 <ol>
   <li>Merge Sort</li>
   <li>Quick Sort</li>
-  <li>Sorting</li>
+  <li>Recursive bubble Sort</li>
 </ol>
