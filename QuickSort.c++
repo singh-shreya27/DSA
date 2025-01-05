@@ -66,3 +66,5 @@ int main(){
 
 //T.C: O(n*log2n)
 //S.C:O(1)
+
+//write code for descending.
