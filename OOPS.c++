@@ -16,13 +16,10 @@ class Hero{
   int health;
 };
 int main(){
-   
    //creation of object
    Hero h1;
-   
    cout<<"size: "<<sizeof(h1) <<endl;   //4(integer:4 byte) size of properties
   //in case of empty class..object is allocated 1 byte memory for its indentification.
-
   return 0;
 }
 
@@ -39,11 +36,13 @@ class Hero{
   private:
   int health;      //4 byte
   public:
+  char *name;
   char level;      //1 byte
-
+  static int timeToComplete;
  //constructor
   Hero(){
-    cout<<"Constructor called"<<endl;
+    cout<<"Default constructor called"<<endl;
+    name = new char[100];
   }
 
   //parametrised constructor
@@ -58,9 +57,27 @@ class Hero{
   }
 
     //once we create our own constructor, the default constructor will no longer exist.
-  
+
+  //copy constructor
+  Hero(Hero &temp){
+
+    char *ch = new char[strlen(temp.name)+1];
+    strcpy(ch,temp.name);
+    this->name=ch;
+    
+    cout<<"Copy constructor called"<<endl;
+    this->health = temp.health;
+    this->level=temp.level;
+
+  }
+
+
   void print(){
-    cout<<level<<endl;
+    cout<<endl;
+    cout<<"[ Name:"<<this->name<<" ,";
+    cout<<"health:"<<this->health<<" ,";
+    cout<<"level:"<<this->level<<" ]";
+    cout<<endl;
   }
 
   int getHealth(){
@@ -76,9 +93,29 @@ class Hero{
   void setLevel(char ch){
     level=ch;
   }
+
+  void setName(char name[]){
+    strcpy(this->name, name);
+  }
+
+static int random(){
+  return timeToComplete;
+}
+
+
+//destructor
+~Hero(){
+  cout<<"Destructor called"<<endl;
+}
 };
+
+int Hero::timeToComplete = 5;
+
 int main(){
-   
+
+
+   cout<<Hero::timeToComplete <<endl;
+   cout<<Hero::random()<<endl;
    //creation of object
    //static allocation 
    Hero ramesh;
@@ -136,10 +173,67 @@ int main(){
 
   Hero temp(22,'W');
   temp.print(); 
+
+  Hero sam(70,'C');
+   sam.print();
+   
+   //copy constructor
+   Hero cam(sam);
+   cam.print();
+
+  Hero hero1;
+  hero1.setHealth(12);
+  hero1.setLevel('D');
+  char name[7] = "Babbar";
+  hero1.setName(name);
+  hero1.print();
+
+  
+   //use default copy constructor  ...it does shallow copy
+   
+   Hero hero2(hero1);
+   hero2.print();
+  //  Hero hero2=hero1;
+
+  hero1.name[0]='G';
+  hero1.print();
+
+  //static
+  Hero r;
+  //dynamic
+  Hero *t = new Hero();
+  delete t;
   
   return 0;
 }
 
 
+//SHALLOW AND DEEP COPY CONSTRUCTOR:
 
+//Shallow Copy Constructor:
+//A shallow copy constructor creates a new object by copying the values of the fields from the original object to the new object.
+//If the object contains pointers, only the addresses are copied, not the actual data. As a result, both the original and copied objects share the same memory for the referenced data.
+
+//Deep Copy Constructor:
+//A deep copy constructor creates a new object by copying the actual data of the original object and allocating separate memory for it.
+//Unlike a shallow copy, a deep copy ensures that the new object is entirely independent of the original object.
+
+                               //Destructor
+
+//It is used for the deallocation of memory.
+//It's name is same as class name with no return type as well as input/output parameters.
+//destructor is called automatically for the objects which are created statically
+//but for objects created using dynamic alloaction we have to call destructor manually.
+
+//CONST KEYWORD
+//INITIALISATION LIST
+
+//STATIC KEYWORD:It creates a data member which belong to class.
+//to access that we don't need to make an object.
+//initialise(::  is called scopr resolution operator)
+//datatype className :: fileName = value;
+
+//STATIC FUNCTIONS: We don't need to create objects
+//they don't have 'this'(pointer to current object) keyword.
+//they can access only static members.
 
