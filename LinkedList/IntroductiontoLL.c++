@@ -50,11 +50,12 @@ cout<<y;
 //int : 4 bytes               //int : 4 bytes
 //*: 4 bytes                  // *  : 8 bytes
 // 8 bytes                    // 12 bytes
-//depending on the system, moemory space used might be different.
+//depending on the system, memory space used might be different.
 
-//HOW TO CONVERT AN ARRAY TO LINKED LIST.
+                                                        //HOW TO CONVERT AN ARRAY TO LINKED LIST.
 #include<bits/stdc++.h>
 using namespace std;
+//1.First create a class for linked list node.
 class Node{
     public:
     int data;
@@ -73,11 +74,12 @@ class Node{
     }
 };
 
+//2.Function to convert an array to linked list.
 Node* convertArr2LL(vector<int> &arr){ 
-    Node* head= new Node(arr[0]);          //we cannot return the entire linkedlist, so we need a head.
-    Node* mover = head;    
+    Node* head= new Node(arr[0]);          //we cannot return the entire linkedlist, so we need a head(first node).
+    Node* mover = head;    //pointer to track the last node
     for(int i=1;i<arr.size();i++){
-        Node *temp = new Node(arr[i]);
+        Node *temp = new Node(arr[i]);  //create a new node.
         mover->next = temp;
         mover=temp;
     }  
@@ -91,7 +93,7 @@ int main(){
 
 //T.C:O(n) simply traversing through every element
 
-//TRAVERSAL IN A LINKED LIST.
+                                                                //TRAVERSAL IN A LINKED LIST.
 #include<bits/stdc++.h>
 using namespace std;
 class Node{
@@ -134,7 +136,7 @@ int main(){
 
 //T.C:O(n) simply traversing through every element
 
-//LENGTH OF A LINKED LIST
+                                                                    //LENGTH OF A LINKED LIST
 #include<bits/stdc++.h>
 using namespace std;
 class Node{
@@ -181,7 +183,7 @@ int main(){
 }
 //T.C:O(n)
 
-//Search in a linked list
+                                                                  //SEARCH IN A LINKED LIST.
 #include<bits/stdc++.h>
 using namespace std;
 class Node{
