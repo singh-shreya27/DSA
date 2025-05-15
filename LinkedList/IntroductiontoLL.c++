@@ -30,6 +30,14 @@ int main(){
     return 0;             //here we are using new variable.
 }
 
+
+//  Defines a class named Node which represents a node in a linked list. It contains:
+// int data;: An integer variable to hold data.
+// Node* next;: A pointer to the next Node in the linked list.
+// Node(int data1, Node* next1): Constructor for Node that initializes data and next with the provided values data1 and next1.
+
+
+
 //WHERE IS LINKED LIST USED?
 //In data structures, it is used in stack/queue.
 //In real life: Used in a browser.
