@@ -2,14 +2,14 @@
 //Arrays are of fixed size like arr[4] and are in contiguous memory location.
 //so we can neither increase nor decrease the size of the array[n].
 //so linkedlist comes in.
-//WHAT IS A LINKED LIST?
+                          //WHAT IS A LINKED LIST?
 //It is a data structure which helps to increase as well as decrease the size.
 //Linkedlist is not in contiguous memory location.
 //Starting point of the linked list is called HEAD of the linked list.
 
 #include<bits/stdc++.h>
 using namespace std;
-//define a self defined data type.
+//define a self defined data type: Class 
 class Node{                 //storing 2 things:
         public:
         int data;           //data itself
@@ -132,6 +132,7 @@ Node* convertArr2LL(vector<int> &arr){
     }  
     return head;
 }
+
 int main(){
     vector<int> arr ={2,5,8,7}; 
     Node* head=convertArr2LL(arr);
@@ -198,13 +199,13 @@ class Node{
     public:
     int data;
     Node* next;
-
+//constructor : to initialize .
     public:
     Node(int data1, Node* next1){
         data =data1;
         next =next1;
     }
- 
+ //multiple constructor : so that we does not need to pass next..automatically to next.
     public:
     Node(int data1){            //if we don't want to pass nullptr ,                             
       data = data1;             // then make multiple constructor.
@@ -215,8 +216,8 @@ class Node{
 Node* convertArr2LL(vector<int> &arr){ 
     Node* head= new Node(arr[0]);          //we cannot return the entire linkedlist, so we need a head.
     Node* mover = head;    
-    for(int i=1;i<arr.size();i++){
-        Node *temp = new Node(arr[i]);
+    for(int i=1;i<arr.size();i++){       //Start from index 1 (because arr[0] was already used to create head).
+        Node *temp = new Node(arr[i]);        
         mover->next = temp;
         mover=temp;
     }  
@@ -224,7 +225,7 @@ Node* convertArr2LL(vector<int> &arr){
 }
 int lengthOfLL(Node* head){
     int count=0;
-  //copy paste the traversal
+  //copy paste the traversal : never hamper the head.
     Node* temp=head;
     while(temp){
         temp=temp->next;
