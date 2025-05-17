@@ -1,5 +1,8 @@
-
-
+          //Insertion: 
+//1.head
+//2.position
+//3.value
+//4.last
 
 
                //INSERTION.
@@ -58,5 +61,8 @@ int main(){
    return 0;
 }
 
+//T.C:O(1)
+
+//Insert at the last.
 
 
