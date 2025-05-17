@@ -166,14 +166,14 @@ void print(Node*head){
    cout<<endl;
 }
 
-Node*insertk(Node*head, int el, int k){
+Node*insertPosition(Node*head, int el, int k){
    if(head==NULL){
       if(k==1)  return new Node(el);
-      else  return NULL;   
+      else  return head;   
    }
    if(k==1){
-      Node*temp= new Node(el, head); //pointing to head
-      return temp;
+      Node*newHead= new Node(el, head); //pointing to head
+      return newHead;
    }
   int cnt=0;
   Node*temp=head;
@@ -193,7 +193,75 @@ Node*insertk(Node*head, int el, int k){
 int main(){
    vector<int>arr={12,8,5,7};
    Node*head=convertArr2LL(arr);
-   head=insertk(head,100,2);
+   head=insertPosition(head,100,2);
+   print(head);
+   return 0;
+}
+
+//Insert el before x.
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+ public:
+ int data;
+ Node*next;
+
+ public:
+ Node(int data1, Node*next1){
+   data=data1;
+   next=next1;
+ }
+
+ public:
+ Node(int data1){
+   data=data1;
+   next=nullptr;
+ }
+};
+
+Node*convertArr2LL(vector<int>&arr){
+   Node*head=new Node(arr[0]);
+   Node*mover=head;
+   for(int i=1;i<arr.size();i++){
+      Node*temp=new Node(arr[i]);
+      mover->next=temp;
+      mover=temp;
+   }
+   return head;
+}
+
+void print(Node*head){
+   while(head!=NULL){
+    cout<<head->data<<" ";
+    head=head->next;
+   }
+   cout<<endl;
+}
+
+Node*insertBeforeValue(Node*head, int el, int val){
+   if(head==NULL){
+     return NULL;
+   }
+   if(head->data==val){
+      return new Node(el,head);
+   }
+  Node*temp=head;
+  while(temp->next!=NULL){
+   if(temp->next->data==val){
+     Node*x=new Node(el);
+     x->next=temp->next;
+     temp->next=x;
+     break;
+   }
+   temp=temp->next;
+  }
+  return head;
+}
+
+int main(){
+   vector<int>arr={12,8,5,7};
+   Node*head=convertArr2LL(arr);
+   head=insertBeforeValue(head,100,12);
    print(head);
    return 0;
 }
