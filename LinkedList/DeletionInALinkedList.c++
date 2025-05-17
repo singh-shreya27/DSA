@@ -1,4 +1,4 @@
-                  //Deletion and insertion : 
+                  //Deletion: 
 //1.head
 //2.position
 //3.value
@@ -252,6 +252,144 @@ int main(){
     head=removek(head,2);
     print(head);
 }
+
+//delete the value given:
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+   public:
+   int data;
+   Node*next;
+
+   public:
+   Node(int data1, Node*next1){
+      data=data1;
+      next=next1;
+   }
+
+   public:
+   Node(int data1){
+     data=data1;
+    next=nullptr;
+   }
+};
+
+Node* convertArr2LL(vector<int>&arr){
+    Node*head=new Node(arr[0]);
+    Node*mover=head;
+    for(int i=1;i<arr.size();i++){
+        Node*temp=new Node(arr[i]);
+        mover->next=temp;
+        mover=temp;
+    }
+    return head;
+}
+void print(Node*head){
+  while(head!=NULL){
+    cout<<head->data<<" ";
+    head=head->next;
+  }
+  cout<<endl;
+}
+Node* removeEl(Node* head, int el){
+    if(head ==NULL) return head;
+    if(head->data==el){
+       Node*temp=head;
+       head=head->next;
+       free(temp);
+       return head;
+    }
+   Node*temp=head;
+   Node*prev=NULL;
+   while(temp!=NULL){
+    //do a linear search
+    if(temp->data==el){
+        prev->next=prev->next->next;
+        free(temp);
+        break;
+    }
+    prev=temp;
+    temp=temp->next;
+   }
+   return head;
+}
+int main(){
+  vector<int> arr={12,5,8,7};
+   Node*head=convertArr2LL(arr);
+   head=removeEl(head,3);
+   print(head);
+}
+
+
+               //INSERTION.
+//Insert at head.
+//Insert 5 at the start of the linked list.
+
+
+//insert the value given at head
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+ public:
+ int data;
+ Node*next;
+
+ public:
+ Node(int data1, Node*next1){
+   data=data1;
+   next=next1;
+ }
+
+ public:
+ Node(int data1){
+   data=data1;
+   next=nullptr;
+ }
+};
+
+Node*convertArr2LL(vector<int>&arr){
+   Node*head=new Node(arr[0]);
+   Node*mover=head;
+   for(int i=1;i<arr.size();i++){
+      Node*temp=new Node(arr[i]);
+      mover->next=temp;
+      mover=temp;
+   }
+   return head;
+}
+
+void print(Node*head){
+   while(head!=NULL){
+    cout<<head->data<<" ";
+    head=head->next;
+   }
+   cout<<endl;
+}
+
+Node* insertHead(Node*head,int val){
+   Node*temp=new Node(val,head);  //next is head..so pointing to head
+   return temp;
+}
+int main(){
+   vector<int>arr={12,8,5,7};
+   Node*head=convertArr2LL(arr);
+   head=insertHead(head,100);
+   print(head);
+   return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
